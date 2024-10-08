@@ -33,7 +33,7 @@ We start with the first permutation, so there is $n$ choices. For the second per
 
 $$n*(n-1)*(n-2)*(n-3)... = n!$$
 
-In the worst case scenerio, after the permutate function finishes generating all permutation, the list of all permutations is iterated through $n!$ times. During each permutation, the isSorted() method is called which takes a time complexity of $n$ for every individual permutation within the list. Combining these all of these terms, we get $\Theta(n \ast n! + n!)$ as the best case complexity, which can be simplified to $\Theta(n \ast n!)$.
+In the worst case scenerio, after the permutate function finishes generating all permutations, the list of all permutations is iterated through $n!$ times (assuming the worst case scenerio). During each permutation, the isSorted() method is called which takes a time complexity of $n$ for every individual permutation within the list. Combining these all of these terms, we get $\Theta(n \ast n! + n!)$ as the best case complexity, which can be simplified to $\Theta(n \ast n!)$.
 
 In the best case, all permutations still have to be generated (which still takes a time complexity of $n!$), however, parsing through the permutations and checking if they are sorted, in the best case scenario the sorted permutation will be first. The string still has to be converted into an array, which takes a time complexity of $n$, but then is terminated after this. Combining these terms, we get $\Theta(n + n!)$ as the best case complexity, which can be simplified to $\Theta(n!)$.
 

@@ -31,11 +31,11 @@ However, when the array size is greater than 1, the permutate function is called
 
 We start with the first permutation, so there is $n$ choices. For the second permutation, there is $n-1$ choice, and so on for the third ($n-2$ choices), fourth ($n-3$ choices), fifth ($n-4$ choices), etc... And since every permutation depends on the one before it, we can write this out as:
 
-$$n*(n-1)*(n-2)*(n-3)*... = n!$$
+$$n*(n-1)*(n-2)*(n-3)... = n!$$
 
 In the worst case scenario, after the permutate function finishes generating all permutations, all the permutations are checked to find the sorted permutation (for the wost case scenario, the sorted permutation is last one to be checked), taking a time complexity of $n$. In the isSolve() method, I have to convert from a string to an array which increases the time complexity to $n^2$ for finding which permutation is sorted. Combining these terms, we get $\Theta(n^2 + n!)$ as worst case complexity for my algorithm. 
 
-In the best case, all permutations still have to be generated (which still takes a time complexity of $n!$), however, parsing through the permutations and checking if they are sorted, in the best case scenario the sorted permutation will be first. The string still has to be converted into an array, which takes a time complexity of $n$, but then is terminated after this. Combining these terms, we get $\Theta(n*n!)$ as the best case complexity, which can be simplified to $\Theta(n!)$.
+In the best case, all permutations still have to be generated (which still takes a time complexity of $n!$), however, parsing through the permutations and checking if they are sorted, in the best case scenario the sorted permutation will be first. The string still has to be converted into an array, which takes a time complexity of $n$, but then is terminated after this. Combining these terms, we get $\Theta(n + n!)$ as the best case complexity, which can be simplified to $\Theta(n!)$.
 
 If my algorithm were to function by randomly picking permutations without systematically keeping track of permutations, it is possible that the algorithm would run infinitely with no bound. 
 
